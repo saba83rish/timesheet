@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "timesheet",
+    "packageName": "com.two95.timesheet",
+    "packageFolder": "com/two95/timesheet",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": false,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "7b780d1b923c3c8e81b3b699dbe6b87d354046d0",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}
