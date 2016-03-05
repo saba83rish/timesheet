@@ -203,8 +203,8 @@ public class JHipsterProperties {
     }
 
     public static class Mail {
-
-        private String from = "timesheet@localhost";
+    	//TODO need to put a custom two95 from email id
+        private String from = "saba83rish@gmail.com";
 
         public String getFrom() {
             return from;
