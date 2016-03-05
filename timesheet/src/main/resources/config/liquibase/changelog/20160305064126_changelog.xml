@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="schand018c (generated)" id="1457160102103-1">
+      <createTable tableName="client">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="clientPK"/>
+         </column>
+         <column name="client_location" type="VARCHAR(255)"/>
+         <column name="client_manager_name" type="VARCHAR(255)"/>
+         <column name="client_name" type="VARCHAR(255)"/>
+         <column name="project_ending_date" type="date"/>
+         <column name="project_joining_date" type="date"/>
+         <column name="user_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="schand018c (generated)" id="1457160102103-2">
+      <addForeignKeyConstraint baseColumnNames="user_id"
+                               baseTableName="client"
+                               constraintName="FK_1ixfyfepst9sjbo9op1v65fg0"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="schand018c (generated)" id="1457160102103-3">
+      <dropSequence sequenceName="jhi_persistent_audit_event_event_id_seq"/>
+   </changeSet>
+   <changeSet author="schand018c (generated)" id="1457160102103-4">
+      <dropSequence sequenceName="jhi_user_id_seq"/>
+   </changeSet>
+</databaseChangeLog>
