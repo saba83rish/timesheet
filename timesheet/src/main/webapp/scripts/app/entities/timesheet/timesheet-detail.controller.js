@@ -12,6 +12,10 @@ angular.module('timesheetApp')
 //                $scope.transformTasksToUi();
 //            });
 //        };
+        $scope.dateToUTC = function(dateString) {
+        	var date = new Date(Date.parse(dateString));
+            return new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
+        };
         
         $scope.transformTasksToUi = function(){
         	var getMapValues = function(map){
@@ -38,10 +42,12 @@ angular.module('timesheetApp')
         				rowObj = {task:taskName,days:[0,0,0,0,0,0,0]};
         				rows[taskName]=rowObj;
         			}
-        			taskDay = new Date(Date.parse(tasks[idx].timeshetDate)).getDay();
+        			taskDay = $scope.dateToUTC(tasks[idx].timeshetDate).getDay();
         			rowObj.days[taskDay] = tasks[idx].timeSpent;
-        			console.log(taskName + " : day "+taskDay + " : hours " + rowObj.days[taskDay] +" : date "+tasks[idx].timeshetDate);
+        			console.log(taskName + " : day "+taskDay + " : hours " + rowObj.days[taskDay] +" : date "+tasks[idx].timeshetDate + " taskDay : "+taskDay);
         		}
+        		console.log("rows:"+rows);
+        		console.log("data:"+getMapValues(rows));
         		$scope.timesheet.tableParams = new NgTableParams({page: 1, count: 50}, {dataset: getMapValues(rows)});
         	} else {
         		$scope.timesheet.tableParams = new NgTableParams({page: 1, count: 50}, {dataset: []});
