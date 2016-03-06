@@ -1,0 +1,63 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myTimesheetLabel">Create or edit a Timesheet</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group" ng-hide="true">
+            <label for="id">ID</label>
+            {{timesheet.id}}
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_weekStart">WeekStart: </label>
+            {{timesheet.weekStart}}
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_weekEnd">WeekEnd: </label>
+            {{timesheet.weekEnd}}
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_userName">UserName: </label>
+            {{timesheet.userName}}
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_managerName">ManagerName: </label>
+            {{timesheet.managerName}}
+        </div>
+        
+        <div class="table-responsive">
+	        <table ng-table="timesheet.tableParams" class="table table-bordered table-striped">
+		      <tr ng-repeat="row in $data track by $index">
+		        <td title="'Task'"><input type="text" ng-model="row.task"/></td>
+		        <td title="'Sun'"><input type="text" ng-model="row.days[0]" style="width: 40px; text-align: center;"/></td>
+		        <td title="'Mon'"><input type="text" ng-model="row.days[1]" style="width: 40px; text-align: center;"/></td>
+		        <td title="'Tue'"><input type="text" ng-model="row.days[2]" style="width: 40px; text-align: center;"/></td>
+		        <td title="'Wed'"><input type="text" ng-model="row.days[3]" style="width: 40px; text-align: center;"/></td>
+		        <td title="'Thu'"><input type="text" ng-model="row.days[4]" style="width: 40px; text-align: center;"/></td>
+		        <td title="'Fri'"><input type="text" ng-model="row.days[5]" style="width: 40px; text-align: center;"/></td>
+		        <td title="'Sat'"><input type="text" ng-model="row.days[6]" style="width: 40px; text-align: center;"/></td>
+		        <td title="''"><button type="button" class="btn btn-default" ng-click="deleteRow($index)">
+		    						<span class="glyphicon glyphicon-remove"></span>
+		    				</button>
+		    	</td>
+		      </tr>
+		    </table>
+		    <button type="button" class="btn btn-default" ng-click="newRow()">
+		    	<span class="glyphicon glyphicon-plus"></span>&nbsp;<span>New Task</span>
+		    </button>
+	    </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

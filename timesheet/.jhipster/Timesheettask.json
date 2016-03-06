@@ -1,0 +1,32 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "timesheet",
+            "otherEntityName": "timesheet",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "timeshetDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "task",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "timeSpent",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20160304203926",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
+}
