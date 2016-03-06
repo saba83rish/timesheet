@@ -23,6 +23,13 @@
                         <span class="glyphicon glyphicon-home"></span>
                         <span class="hidden-sm">Timesheets</span>
                     </a>
+                 </li>
+                 <li>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active" ><a ui-sref="client" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span >Client</span></a></li>
+                        <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
+                    </ul>
                 </li>
                 <li ng-class="{active: $state.includes('account')}" class="dropdown pointer">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="" id="account-menu">

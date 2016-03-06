@@ -1,0 +1,44 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "firstName"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "clientName",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "clientLocation",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "clientManagerName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "projectJoiningDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "projectEndingDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20160305064050",
+    "dto": "no",
+    "service": "serviceClass",
+    "pagination": "pager"
+}
