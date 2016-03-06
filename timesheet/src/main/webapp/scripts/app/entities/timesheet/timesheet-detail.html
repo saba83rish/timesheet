@@ -1,0 +1,69 @@
+
+<div>
+    <h2><span>Timesheet</span> {{timesheet.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>WeekStart</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{timesheet.weekStart | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>WeekEnd</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{timesheet.weekEnd | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>UserName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{timesheet.userName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ManagerName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{timesheet.managerName}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="table_responsive">
+        <table ng-table="timesheet.tableParams" class="table table-bordered table-striped">
+	      <tr ng-repeat="row in $data track by $index">
+	        <td title="'Task'">{{row.task}}</td>
+	        <td title="'Sun'">{{row.days[0]}}</td>
+	        <td title="'Mon'">{{row.days[1]}}</td>
+	        <td title="'Tue'">{{row.days[2]}}</td>
+	        <td title="'Wed'">{{row.days[3]}}</td>
+	        <td title="'Thu'">{{row.days[4]}}</td>
+	        <td title="'Fri'">{{row.day[5]}}</td>
+	        <td title="'Sat'">{{row.day[6]}}</td>
+	      </tr>
+	    </table>    
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

@@ -1,0 +1,29 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "weekStart",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "weekEnd",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "userName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "managerName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160304201822",
+    "dto": "no",
+    "service": "serviceImpl",
+    "pagination": "pager"
+}
